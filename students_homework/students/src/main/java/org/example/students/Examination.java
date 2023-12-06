@@ -1,6 +1,6 @@
 package org.example.students;
 
-import java.util.Collection;
+import java.util.Map;
 import java.util.Set;
 
 public interface Examination {
@@ -14,5 +14,5 @@ public interface Examination {
 
     Set<String> lastFiveStudentsWithExcellentMarkOnAnySubject();
 
-    Collection<Score> getAllScores();
+    Map<String, Score> getAllScores();
 }
