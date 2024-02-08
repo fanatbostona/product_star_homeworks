@@ -7,17 +7,15 @@ public class Main {
     public static void main(String[] args)
     {
         ResultBoard rb = new ResultBoard();
-        rb.addStudent("Ivanov", 4.4F);
-        rb.addStudent("Petrov", 3.73F);
-        rb.addStudent("Sidorov", 4.41F);
-        rb.addStudent("Lebron", 5.0F);
-        rb.addStudent("Jordan", 3.54F);
-        rb.printStudents();
-        List<String> result = new ArrayList<>(3);
+        rb.addStudent("Ivan", 3.0f);
+        rb.addStudent("Maria", 4.0f);
+        rb.addStudent("Vlad", 5.0f);
+        rb.addStudent("Anton", 4.5f);
+        rb.addStudent("Daria", 1.5f);
+        rb.addStudent("Vasiliy", 5.0f);
+        List<String> result;
         result = rb.top3();
         for (String s : result)
             System.out.println(s);
-
-
     }
 }

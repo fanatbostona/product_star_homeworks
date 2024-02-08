@@ -6,30 +6,37 @@ import java.util.TreeSet;
 
 public class ResultBoard
 {
-    TreeSet <Student> students = new TreeSet<Student>();
+    private TreeSet <Student> students = new TreeSet<Student>();
 
-    void addStudent(String name, Float score)
+    public void addStudent(String name, Float score) throws NullPointerException
     {
-        Student student = new Student(name, score);
-        students.add(student);
+        if (name == null || score == null)
+            throw new NullPointerException("Имя или средний балл не должны быть null!");
+        students.add(new Student(name,score));
     }
 
-    void printStudents()
+    public List<String> top3 ()
     {
-        for (Student st : students)
-            System.out.println(st);
-    }
+        int cap = Math.min(students.size(),3);
+        List <String> result = new ArrayList<>(cap);
+        if (cap == 0)
+        {
+            return null;
+        }
+        else
+        {
+            Student stud = students.pollLast();
+            String res;
+            for (int i = 0; i < cap; i++)
+            {
+                res = stud.name;
+                result.add(res);
+                stud = students.pollLast();
 
-    List<String> top3 ()
-    {
-        List <String> result = new ArrayList<>(3);
-        result.add(students.last().name);
-        Student second = students.lower(students.last());
-        result.add(second.name);
-        Student third = students.lower(second);
-        result.add(third.name);
+            }
+            return result;
+        }
 
-        return result;
     }
 }
 
