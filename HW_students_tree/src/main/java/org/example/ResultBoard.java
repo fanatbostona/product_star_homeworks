@@ -4,39 +4,30 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeSet;
 
-public class ResultBoard
-{
-    private TreeSet <Student> students = new TreeSet<Student>();
+public class ResultBoard {
+    private TreeSet<Student> students = new TreeSet<Student>();
 
-    public void addStudent(String name, Float score) throws NullPointerException
-    {
+    public void addStudent(String name, Float score) throws NullPointerException {
         if (name == null || score == null)
             throw new NullPointerException("Имя или средний балл не должны быть null!");
-        students.add(new Student(name,score));
+        students.add(new Student(name, score));
     }
 
-    public List<String> top3 ()
-    {
-        int cap = Math.min(students.size(),3);
-        List <String> result = new ArrayList<>(cap);
-        if (cap == 0)
-        {
+    public List<String> top3() {
+        int cap = Math.min(students.size(), 3);
+        List<String> result = new ArrayList<>(cap);
+        if (cap == 0) {
             return null;
-        }
-        else
-        {
-            Student stud = students.pollLast();
+        } else {
+            Student stud = students.last();
             String res;
-            for (int i = 0; i < cap; i++)
-            {
+            for (int i = 0; i < cap; i++) {
                 res = stud.name;
                 result.add(res);
-                stud = students.pollLast();
-
+                stud = students.lower(stud);
             }
             return result;
         }
-
     }
 }
 
