@@ -28,7 +28,7 @@ public class Main
         };
         try
         {
-            Optional <Integer> max = new BufferedReader(new FileReader("D:/Desktop/lines.txt")).lines()
+            Optional <Double> max = new BufferedReader(new FileReader("D:/Desktop/lines.txt")).lines()
                     .map(stringToLength)
                     .max(Double::max);
             System.out.println(max);
