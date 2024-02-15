@@ -2,11 +2,9 @@ package org.example;
 
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
 import java.util.regex.Matcher;
@@ -28,9 +26,9 @@ public class Main
         };
         try
         {
-            Optional <Double> max = new BufferedReader(new FileReader("D:/Desktop/lines.txt")).lines()
+            Optional <Double> max = new BufferedReader(new FileReader("src/main/java/org/example/lines.txt")).lines()
                     .map(stringToLength)
-                    .max(Double::max);
+                    .max(Double::compare);
             System.out.println(max);
 
         } catch (IOException e)
