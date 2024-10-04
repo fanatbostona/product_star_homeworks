@@ -10,11 +10,12 @@ public class Answer {
         answer_letter = al;
     }
 
-    public int getAnswer_number() {
-        return answer_number;
-    }
-
     public String getAnswer_letter() {
         return answer_letter;
+    }
+
+    @Override
+    public String toString() {
+        return "Question " + answer_number + ". Answer = " + answer_letter;
     }
 }

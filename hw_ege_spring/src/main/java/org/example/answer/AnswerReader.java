@@ -18,7 +18,7 @@ public class AnswerReader {
     private final AnswerParser answerParser;
 
     @Autowired
-    public AnswerReader(AnswerParser ap) throws IOException {
+    private AnswerReader(AnswerParser ap) throws IOException {
         this.answerParser = ap;
     }
 
