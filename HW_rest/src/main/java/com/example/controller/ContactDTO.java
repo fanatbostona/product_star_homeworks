@@ -1,7 +1,7 @@
-package controller;
+package com.example.controller;
 
+import com.example.manager.Contact;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import manager.Contact;
 
 public class ContactDTO {
 

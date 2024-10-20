@@ -1,4 +1,4 @@
-package manager;
+package com.example.manager;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -34,5 +34,10 @@ public class InMemoryContactDAO implements ContactDAO{
     public void setContact(String name, String surname, String phone_number, String email) {
         var contact = getContact(contactID);
         contact.editInformation(name,surname,phone_number,email);
+    }
+
+    @Override
+    public Map<Long,Contact> getContacts() {
+        return contactIDMap;
     }
 }

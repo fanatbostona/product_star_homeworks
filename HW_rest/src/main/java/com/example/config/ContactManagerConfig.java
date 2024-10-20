@@ -1,8 +1,8 @@
-package config;
+package com.example.config;
 
 
-import manager.ContactDAO;
-import manager.InMemoryContactDAO;
+import com.example.manager.ContactDAO;
+import com.example.manager.InMemoryContactDAO;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

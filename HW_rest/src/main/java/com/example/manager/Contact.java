@@ -1,4 +1,4 @@
-package manager;
+package com.example.manager;
 
 public class Contact {
 
