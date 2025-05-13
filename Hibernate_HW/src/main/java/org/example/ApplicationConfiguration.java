@@ -1,10 +1,10 @@
-package org.example.config;
+package org.example;
+
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan("org.example")
+@ComponentScan()
 public class ApplicationConfiguration {
-
 }
