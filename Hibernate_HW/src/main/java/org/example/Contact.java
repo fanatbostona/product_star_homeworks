@@ -21,15 +21,17 @@ public class Contact {
     @Column(name = "email", nullable = false)
     private String email_address;
 
+    public Contact() {
 
-    public Contact(Long id, String n, String s, String pn, String ea) {
-        this.id = id;
-        this.name = n;
-        this.surname = s;
-        this.phone_number = pn;
-        this.email_address = ea;
     }
 
+    public void setPhone_number(String phone_number) {
+        this.phone_number = phone_number;
+    }
+
+    public void setEmail_address(String email_address) {
+        this.email_address = email_address;
+    }
 
     public String getName() {
         return name;

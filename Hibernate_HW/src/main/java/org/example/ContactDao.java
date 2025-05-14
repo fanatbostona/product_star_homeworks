@@ -23,5 +23,42 @@ public class ContactDao {
         }
     }
 
+    public Contact getContact(Long id) {
+        try (var session = sessionFactory.openSession()) {
+            return session.get(Contact.class, id);
+        }
+    }
+
+    public long addContact(String name, String surname, String phone_number, String email) {
+        try (var session = sessionFactory.openSession()) {
+            Contact newContact = new Contact();
+            newContact.editInformation(name, surname, phone_number, email);
+            var transaction = session.beginTransaction();
+            var contactID = (long) session.save(newContact);
+            transaction.commit();
+            return contactID;
+        }
+    }
+
+    public void updatePhoneNumber(long ID, String new_phone_number) {
+        try (var session = sessionFactory.openSession()) {
+            var transaction = session.beginTransaction();
+            var contact = getContact(ID);
+            if (contact != null) {
+                contact.setPhone_number(new_phone_number);
+                session.update(contact);
+            }
+            transaction.commit();
+        }
+    }
+
+    public void updateEmail(long ID, String new_email) {
+
+    }
+
+    public void deleteContact(long ID) {
+
+    }
+
 
 }
