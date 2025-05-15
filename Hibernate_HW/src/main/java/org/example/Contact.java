@@ -19,7 +19,7 @@ public class Contact {
     @Column(name = "phone_number", nullable = false)
     private String phone_number;
     @Column(name = "email", nullable = false)
-    private String email_address;
+    private String email;
 
     public Contact() {
 
@@ -30,7 +30,7 @@ public class Contact {
     }
 
     public void setEmail_address(String email_address) {
-        this.email_address = email_address;
+        this.email = email_address;
     }
 
     public String getName() {
@@ -46,7 +46,7 @@ public class Contact {
     }
 
     public String getEmail_address() {
-        return email_address;
+        return email;
     }
 
     public long getId() {
@@ -60,7 +60,7 @@ public class Contact {
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", phone_number='" + phone_number + '\'' +
-                ", email_address='" + email_address + '\'' +
+                ", email_address='" + email + '\'' +
                 '}';
     }
 
@@ -68,6 +68,6 @@ public class Contact {
         this.name = n;
         this.surname = s;
         this.phone_number = pn;
-        this.email_address = ea;
+        this.email = ea;
     }
 }

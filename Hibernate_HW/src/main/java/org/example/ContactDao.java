@@ -53,11 +53,26 @@ public class ContactDao {
     }
 
     public void updateEmail(long ID, String new_email) {
-
+        try (var session = sessionFactory.openSession()) {
+            var transaction = session.beginTransaction();
+            var contact = getContact(ID);
+            if (contact != null) {
+                contact.setEmail_address(new_email);
+                session.update(contact);
+            }
+            transaction.commit();
+        }
     }
 
     public void deleteContact(long ID) {
-
+        try (var session = sessionFactory.openSession()) {
+            var transaction = session.beginTransaction();
+            var contact = getContact(ID);
+            if (contact != null) {
+                session.delete(contact);
+            }
+            transaction.commit();
+        }
     }
 
 
